@@ -27,7 +27,7 @@ class JsonStorage(Storage):
                 with open(self.path, encoding="utf-8") as json_file:
                     parsed_data = json.load(json_file)
                     patients: dict[str, Patient] = {}
-                    for policy, patient_data in parsed_data.items():
+                    for _policy, patient_data in parsed_data.items():
                         patient = Patient.from_dict(patient_data)
                         patients[patient.policy] = patient
                     return patients
