@@ -1,3 +1,4 @@
+import math
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Any, Self
@@ -14,7 +15,7 @@ class Prescription:
     def __post_init__(self) -> None:
         if not self.drug.strip():
             raise ValidationError("Неверные данные медикамента")
-        if self.dose_mg <= 0:
+        if not math.isfinite(self.dose_mg) or self.dose_mg <= 0:
             raise ValidationError(f"Доза должна быть положительной: {self.dose_mg}")
 
     @property

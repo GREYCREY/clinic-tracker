@@ -44,7 +44,7 @@ class JsonStorage(Storage):
             return {}
 
     def save(self, patients: dict[str, Patient]) -> None:
-        data_for_save: dict[str, dict[str, Patient]]  = {}
+        data_for_save: dict[str, dict[str, Patient]] = {}
         try:
             for policy, patient_data in patients.items():
                 patient_to_dict = patient_data.to_dict()
