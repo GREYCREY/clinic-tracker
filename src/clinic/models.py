@@ -55,8 +55,8 @@ class Patient:
                 f"Дата рождения не может быть в будущем: {self.birth_date}"
             )
 
-    def add_prescription(self, prescripton: Prescription) -> None:
-        self.prescriptions.append(prescripton)
+    def add_prescription(self, prescription: Prescription) -> None:
+        self.prescriptions.append(prescription)
 
     @property
     def age(self) -> int:
